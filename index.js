@@ -2,8 +2,9 @@ var fs = require("fs");
 var contents = fs.readFileSync("EndPoints.json");
 var jsonContent = JSON.parse(contents);
 var ModelTemplateController = require("./templates/model.js");
+var ValidationTemplateController = require("./templates/validation.js");
 
-var dirs = ['./src','./src/models']
+var dirs = ['./src','./src/models','./src/validations']
 dirs.forEach(dir => {
   if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);
@@ -15,8 +16,9 @@ dirs.forEach(dir => {
 
 
 jsonContent.endpoints.forEach(element => {
-    let finalResult  = ModelTemplateController.TemplateModel(element.name,element)
-   console.log(finalResult,"\n")
+    let finalResult  = ModelTemplateController.TemplateModel(element)
+    let finalResult2  = ValidationTemplateController.TemplateModel(element)
+   console.log(finalResult2,"\n")
     properties = ``
 });
 

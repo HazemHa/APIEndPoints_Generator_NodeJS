@@ -11,11 +11,9 @@ const flash = new Schema({
   },
   work_from: {
     type: String,
-    required: true,
   },
   work_to: {
     type: String,
-    required: true,
   },
 });
 module.exports = mongoose.model("flash", flash);

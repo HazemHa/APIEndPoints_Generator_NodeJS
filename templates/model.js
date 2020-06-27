@@ -1,4 +1,3 @@
-const { type } = require("os");
 const { isArray } = require("util");
 const fs = require("fs");
 
@@ -23,7 +22,7 @@ ModelTemplateController.filterAttributes = (jsonObject) => {
       } else {
         if (!isArray(value)) {
           currentProperties += `${key}: ${value}\n`;
-        } else if (key == "validations" && isArray(value)) {
+        } else if (key == "db_validations" && isArray(value)) {
           value.forEach((validateRules, index, array) => {
             for (const [validateKey, validate] of Object.entries(
               validateRules
@@ -48,20 +47,20 @@ ModelTemplateController.filterAttributes = (jsonObject) => {
   return currentProperties;
 };
 
-ModelTemplateController.TemplateModel = (modelName, jsonObject) => {
+ModelTemplateController.TemplateModel = (jsonObject) => {
   content = ModelTemplateController.filterAttributes(jsonObject);
   finalFile = `const mongoose = require("mongoose");
 
     const Schema = mongoose.Schema;
     mongoose.Promise = require("bluebird");
     
-    const ${modelName} = new Schema({
+    const ${jsonObject.name} = new Schema({
        ${content}
     });
-    module.exports = mongoose.model("${modelName}", ${modelName});
+    module.exports = mongoose.model("${jsonObject.name}", ${jsonObject.name});
     `;
 
-  fs.writeFileSync(`./src/models/${modelName}.js`, finalFile);
+  fs.writeFileSync(`./src/models/${jsonObject.name}.js`, finalFile);
 };
 
 module.exports = ModelTemplateController;

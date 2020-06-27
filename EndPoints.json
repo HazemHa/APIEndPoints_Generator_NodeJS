@@ -8,17 +8,20 @@
             {
                 "name":"active",
                 "type":"boolean",
-                "validations":[{"required":true},{ "unique": true}]
+                "db_validations":[{"required":true},{ "unique": true}],
+                "joi_validations":["required()","bool()"]
             },
             {
                 "name":"work_from",
                 "type":"string",
-                "validations":[{"required":true}]
+                "validations":[{"required":true}],
+                "joi_validations":["number()","string()"]
             },
             {
                 "name":"work_to",
                 "type":"string",
-                "validations":[{"required":true}]
+                "validations":[{"required":true}],
+                "joi_validations":["number()","string()"]
             }]
         }
     ]
