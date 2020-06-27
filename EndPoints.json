@@ -1,0 +1,25 @@
+{
+    "endpoints":[
+        {
+            "prefix":"api",
+            "name":"flash",
+            "timestamp":true,
+            "fields":[
+            {
+                "name":"active",
+                "type":"boolean",
+                "validations":[{"required":true},{ "unique": true}]
+            },
+            {
+                "name":"work_from",
+                "type":"string",
+                "validations":[{"required":true}]
+            },
+            {
+                "name":"work_to",
+                "type":"string",
+                "validations":[{"required":true}]
+            }]
+        }
+    ]
+}
