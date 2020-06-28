@@ -63,13 +63,17 @@ ValidationTemplateController.filterAttributes = (jsonObject) => {
   
   ValidationTemplateController.Template = (jsonObject) => {
     content = ValidationTemplateController.filterAttributes(jsonObject);
-    capitalizeName = capitalize(jsonObject.name)
-    finalFile = `routes.get("/", checkUser.userHandler,mainController.get);`;
+    finalFile = `const Joi = require("@hapi/joi");
+    const ${jsonObject.name} = Joi.object({
+       ${content}
+      });
+    
+    module.exports = ${jsonObject.name}
+      `;
   
-    fs.writeFileSync(`./src/routes/${jsonObject.name}.js`, finalFile);
+    fs.writeFileSync(`./src/validations/${jsonObject.name}.js`, finalFile);
     return finalFile
   };
-
   
 
 module.exports = ValidationTemplateController;

@@ -62,6 +62,8 @@ ModelTemplateController.Template = (jsonObject) => {
     `;
 
   fs.writeFileSync(`./src/models/${jsonObject.name}.js`, finalFile);
+
+  return `const {${capitalizeName}Model} = require('./models/${jsonObject.name}');`
 };
 
 module.exports = ModelTemplateController;

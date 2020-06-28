@@ -218,6 +218,7 @@ ControllerTemplateController.filterAttributes = (jsonObject) => {
     `;
   
     fs.writeFileSync(`./src/controllers/${jsonObject.name}.js`, finalFile);
+    return `const {${capitalizeName}Controller} = require('./controllers/${jsonObject.name}');`
     return finalFile
   };
 
