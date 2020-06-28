@@ -1,8 +1,5 @@
 # APIEndPoints_Generator_NodeJS
 
-
-# Migration Files based on SQL CODE
-
 #### basic crud generator for basic of HTTP requests to build a simple Restful API based on JSON
 
 ## HOW TO USE ?
