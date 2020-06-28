@@ -2,6 +2,12 @@ const { isArray } = require("util");
 const fs = require("fs");
 
 
+const capitalize = (s) => {
+  if (typeof s !== "string") return "";
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
+
+
 const ValidationTemplateController = {};
 
 ValidationTemplateController.filterAttributes = (jsonObject) => {
@@ -55,18 +61,12 @@ ValidationTemplateController.filterAttributes = (jsonObject) => {
     return currentProperties;
   };
   
-  ValidationTemplateController.TemplateModel = (jsonObject) => {
+  ValidationTemplateController.Template = (jsonObject) => {
     content = ValidationTemplateController.filterAttributes(jsonObject);
-    finalFile = `const Joi = require("@hapi/joi");
-
-    const ${jsonObject.name} = Joi.object({
-       ${content}
-      });
-    
-    module.exports = ${jsonObject.name}
-      `;
+    capitalizeName = capitalize(jsonObject.name)
+    finalFile = `routes.get("/", checkUser.userHandler,mainController.get);`;
   
-    fs.writeFileSync(`./src/validations/${jsonObject.name}.js`, finalFile);
+    fs.writeFileSync(`./src/routes/${jsonObject.name}.js`, finalFile);
     return finalFile
   };
 

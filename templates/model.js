@@ -47,17 +47,18 @@ ModelTemplateController.filterAttributes = (jsonObject) => {
   return currentProperties;
 };
 
-ModelTemplateController.TemplateModel = (jsonObject) => {
+ModelTemplateController.Template = (jsonObject) => {
   content = ModelTemplateController.filterAttributes(jsonObject);
+  capitalizeName = capitalize(jsonObject.name)
   finalFile = `const mongoose = require("mongoose");
 
     const Schema = mongoose.Schema;
     mongoose.Promise = require("bluebird");
     
-    const ${jsonObject.name} = new Schema({
+    const ${capitalizeName} = new Schema({
        ${content}
     });
-    module.exports = mongoose.model("${jsonObject.name}", ${jsonObject.name});
+    module.exports = mongoose.model("${capitalizeName}", ${capitalizeName});
     `;
 
   fs.writeFileSync(`./src/models/${jsonObject.name}.js`, finalFile);
