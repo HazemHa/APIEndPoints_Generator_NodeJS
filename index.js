@@ -6,9 +6,9 @@ var ValidationTemplateController = require("./templates/validation.js");
 var RouteTemplateController = require("./templates/route.js");
 var ControllerTemplateController = require("./templates/controller.js");
 var ServerTemplateController = require("./templates/mainserver.js");
+var DBSettingTemplateController = require("./templates/dbsetting")
 
-
-var dirs = ['./src','./src/models','./src/validations','./src/routes/','./src/controllers/']
+var dirs = ['./src','./src/models','./src/validations','./src/routes/','./src/controllers/','./src/db']
 dirs.forEach(dir => {
   if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);
@@ -18,9 +18,10 @@ dirs.forEach(dir => {
 
 
 let routes = []
-
+let models = []
 jsonContent.endpoints.forEach(element => {
     let finalResult  = ModelTemplateController.Template(element)
+    models.push(finalResult)
     let finalResult2  = ValidationTemplateController.Template(element)
     let finalResult3  = ControllerTemplateController.Template(element)
     let finalResult4  = RouteTemplateController.Template(element)
@@ -31,13 +32,15 @@ jsonContent.endpoints.forEach(element => {
 
 defineRoutes = ``
 useRoutes = ``
+useModels = ``
 routes.forEach((model, index, array) => {
   // first format => `const {${capitalizeName}Route} = require('./routes/${jsonObject.name}');`
   // second format =>  app.use("/", routes);
   defineRoutes += `${routes[index][0]}\n`
   useRoutes += `${routes[index][1]}\n`
+  useModels +=`${models[index]}\n`
 });
 
-
-let finalResult5  = ServerTemplateController.Template(defineRoutes,useRoutes)
+DBSettingTemplateController.Template()
+let finalResult5  = ServerTemplateController.Template(defineRoutes,useRoutes,useModels)
 

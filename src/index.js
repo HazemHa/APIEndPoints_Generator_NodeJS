@@ -1,12 +1,4 @@
-const { isArray } = require("util");
-const fs = require("fs");
 
-const ServerTemplateController = {};
-
-ServerTemplateController.filterAttributes = (jsonObject) => {};
-
-ServerTemplateController.Template = (defineRoutes,useRoutes,Models) => {
-  finalFile = `
 
 /**
  * Module dependencies.
@@ -19,14 +11,17 @@ var database = require("./db/mongodb")
 /**
  * Models
  */
-${Models}
+const FlashModel = require('./models/flash');
+
 
 
 
 /**
  * Routes
  */
-${defineRoutes}
+const FlashRoute = require('./routes/flash');
+
+
 
 /**
  * Middlewares
@@ -46,7 +41,9 @@ app.use(bodyParser.json());
 /**
  * Routes
  */
-${useRoutes}
+app.use("/", FlashRoute);
+
+
 
 /**
  * Start Express server.
@@ -56,10 +53,3 @@ app.listen(app.get('port'), () => {
 });
 
 module.exports = {app};
-`;
-
-  fs.writeFileSync(`./src/index.js`, finalFile);
-  return finalFile;
-};
-
-module.exports = ServerTemplateController;

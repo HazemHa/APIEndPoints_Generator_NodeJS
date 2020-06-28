@@ -90,8 +90,8 @@ ControllerTemplateController.filterAttributes = (jsonObject) => {
     capitalizeName = capitalize(jsonObject.name)
     finalFile = `
     const _ = require('lodash');
-    const {ObjectID} = require('mongodb');
-    const {${capitalizeName}} = require('../models/${jsonObject.name}');
+    const ObjectID = require('mongodb');
+    const ${capitalizeName} = require('../models/${jsonObject.name}');
 
 
     /* POST /${jsonObject.name} */
