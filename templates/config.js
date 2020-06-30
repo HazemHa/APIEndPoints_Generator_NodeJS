@@ -1,8 +1,8 @@
 const fs = require("fs");
 
-const DBSettingTemplateController = {};
+const ConfigTemplateController = {};
 
-DBSettingTemplateController.Template = () => {
+ConfigTemplateController.Template = () => {
   finalFile = `const mongoose = require('mongoose');
     require('dotenv').config();
     const datebase = () => {
@@ -37,10 +37,28 @@ DBSettingTemplateController.Template = () => {
     DB_NAME ="sensorDB"
     IP_DEVICE = "127.0.0.1"`;
 
+
+  let packageJson = `{
+    "name": "end-points-api-generator",
+    "description": "A package using end-points-api-generator",
+    "author": "Hazem Hussein <hazemhahussain@gmail.com>",
+    "dependencies": {
+      "body-parser": "1.19.0",
+      "express": "4.17.1",
+      "lodash": "4.17.15",
+      "mongodb": "3.5.9",
+      "mongoose": "5.9.20",
+      "dotenv": "8.x.x"
+    },
+    "engine": "node >= 10.0.0"
+  }
+  `
+
   fs.writeFileSync(`./src/db/mongodb.js`, finalFile);
   fs.writeFileSync(`./src/.env`, envFile);
+  fs.writeFileSync(`./src/package.json`, packageJson);
   return `const ${capitalizeName}Controller = require('./db/mongodb');`;
   return finalFile;
 };
 
-module.exports = DBSettingTemplateController;
+module.exports = ConfigTemplateController;

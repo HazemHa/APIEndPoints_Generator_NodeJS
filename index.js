@@ -6,7 +6,7 @@ var ValidationTemplateController = require("./templates/validation.js");
 var RouteTemplateController = require("./templates/route.js");
 var ControllerTemplateController = require("./templates/controller.js");
 var ServerTemplateController = require("./templates/mainserver.js");
-var DBSettingTemplateController = require("./templates/dbsetting")
+var ConfigTemplateController = require("./templates/config.js")
 
 var dirs = ['./src','./src/models','./src/validations','./src/routes/','./src/controllers/','./src/db']
 dirs.forEach(dir => {
@@ -41,6 +41,6 @@ routes.forEach((model, index, array) => {
   useModels +=`${models[index]}\n`
 });
 
-DBSettingTemplateController.Template()
+ConfigTemplateController.Template()
 let finalResult5  = ServerTemplateController.Template(defineRoutes,useRoutes,useModels)
 
