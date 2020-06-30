@@ -16,6 +16,12 @@ ModelTemplateController.filterAttributes = (jsonObject) => {
       if (key == "type") {
         capitalizeType = capitalize(value);
         currentProperties += `${key}:${capitalizeType},\n`;
+      } else if (key == "content") {
+        console.log("value :", value, "\n\n\n");
+        currentProperties +=
+          ModelTemplateController.filterAttributes(value) + `,`;
+        //console.log("checkit :",checkit,"\n\n\n")
+        //textOfValues = JSON.stringify(value);
       } else if (key == "enum" && isArray(value)) {
         textOfValues = JSON.stringify(value);
         currentProperties += `${key}: ${textOfValues}\n`;
@@ -49,7 +55,7 @@ ModelTemplateController.filterAttributes = (jsonObject) => {
 
 ModelTemplateController.Template = (jsonObject) => {
   content = ModelTemplateController.filterAttributes(jsonObject);
-  capitalizeName = capitalize(jsonObject.name)
+  capitalizeName = capitalize(jsonObject.name);
   finalFile = `const mongoose = require("mongoose");
 
     const Schema = mongoose.Schema;
@@ -63,7 +69,7 @@ ModelTemplateController.Template = (jsonObject) => {
 
   fs.writeFileSync(`./src/models/${jsonObject.name}.js`, finalFile);
 
-  return `const ${capitalizeName}Model = require('./models/${jsonObject.name}');`
+  return `const ${capitalizeName}Model = require('./models/${jsonObject.name}');`;
 };
 
 module.exports = ModelTemplateController;

@@ -1,13 +1,9 @@
 const fs = require("fs");
 
-
-
-
 const DBSettingTemplateController = {};
 
-  DBSettingTemplateController.Template = () => {
-
-    finalFile = `const mongoose = require('mongoose');
+DBSettingTemplateController.Template = () => {
+  finalFile = `const mongoose = require('mongoose');
     require('dotenv').config();
     const datebase = () => {
         //db info
@@ -36,18 +32,15 @@ const DBSettingTemplateController = {};
     
     module.exports =  datebase();`;
 
-
-    let envFile = `DB_URL ="localhost"
+  let envFile = `DB_URL ="localhost"
     DB_PORT =27017
     DB_NAME ="sensorDB"
-    IP_DEVICE = "127.0.0.1"`
-  
-    fs.writeFileSync(`./src/db/mongodb.js`, finalFile);
-    fs.writeFileSync(`./src/.env`, envFile);
-    return `const ${capitalizeName}Controller = require('./db/mongodb');`
-    return finalFile
-  };
+    IP_DEVICE = "127.0.0.1"`;
 
-  
+  fs.writeFileSync(`./src/db/mongodb.js`, finalFile);
+  fs.writeFileSync(`./src/.env`, envFile);
+  return `const ${capitalizeName}Controller = require('./db/mongodb');`;
+  return finalFile;
+};
 
 module.exports = DBSettingTemplateController;

@@ -5,7 +5,7 @@ const ServerTemplateController = {};
 
 ServerTemplateController.filterAttributes = (jsonObject) => {};
 
-ServerTemplateController.Template = (defineRoutes,useRoutes,Models) => {
+ServerTemplateController.Template = (defineRoutes, useRoutes, Models) => {
   finalFile = `
 
 /**

@@ -3,35 +3,36 @@ const fs = require("fs");
 
 
 
-
 const capitalize = (s) => {
   if (typeof s !== "string") return "";
   return s.charAt(0).toUpperCase() + s.slice(1);
 };
 
+
+
 const ControllerTemplateController = {};
 ControllerTemplateController.filterAttributes = (jsonObject) => {
-    parameters = `{`;
-    defineVariables = ``;
-    jsonObject.fields.forEach((field, index, array) => {
-      //currentProperties += `${field.name}:\n`;
-      
-      for (const [key, value] of Object.entries(field)) {
-        if (key == "name") {
-          defineVariables += `let ${value} = req.body.${value}\n`
+  parameters = `{`;
+  defineVariables = ``;
+  jsonObject.fields.forEach((field, index, array) => {
+    //currentProperties += `${field.name}:\n`;
 
-          if(index == 0){
-            parameters += `${value}\n`
-          }else{
-            parameters += `,${value}`
-          }
-          
-          console.log("key, value :",key, value)
+    for (const [key, value] of Object.entries(field)) {
+      if (key == "name") {
+        defineVariables += `let ${value} = req.body.${value}\n`;
 
-          break
-        };
+        if (index == 0) {
+          parameters += `${value}\n`;
+        } else {
+          parameters += `,${value}`;
+        }
+
+        console.log("key, value :", key, value);
+
+        break;
       }
-      /*
+    }
+    /*
       for (const [key, value] of Object.entries(field)) {
         if (key == "name") continue;
         else {
@@ -76,19 +77,19 @@ ControllerTemplateController.filterAttributes = (jsonObject) => {
         currentProperties += `,\n`;
       }
 */
-    });
+  });
 
-    parameters += `}`
-    defineVariables += `let data = ${parameters};` 
-   // console.log("parameters :",parameters,"defineVariables :",defineVariables)
-  
-    return defineVariables;
-  };
-  
-  ControllerTemplateController.Template = (jsonObject) => {
-    parameters = ControllerTemplateController.filterAttributes(jsonObject);
-    capitalizeName = capitalize(jsonObject.name)
-    finalFile = `
+  parameters += `}`;
+  defineVariables += `let data = ${parameters};`;
+  // console.log("parameters :",parameters,"defineVariables :",defineVariables)
+
+  return defineVariables;
+};
+
+ControllerTemplateController.Template = (jsonObject) => {
+  parameters = ControllerTemplateController.filterAttributes(jsonObject);
+  capitalizeName = capitalize(jsonObject.name);
+  finalFile = `
     const _ = require('lodash');
     const ObjectID = require('mongodb');
     const ${capitalizeName} = require('../models/${jsonObject.name}');
@@ -216,12 +217,10 @@ ControllerTemplateController.filterAttributes = (jsonObject) => {
     };
     
     `;
-  
-    fs.writeFileSync(`./src/controllers/${jsonObject.name}.js`, finalFile);
-    return `const {${capitalizeName}Controller} = require('./controllers/${jsonObject.name}');`
-    return finalFile
-  };
 
-  
+  fs.writeFileSync(`./src/controllers/${jsonObject.name}.js`, finalFile);
+  return `const {${capitalizeName}Controller} = require('./controllers/${jsonObject.name}');`;
+  return finalFile;
+};
 
 module.exports = ControllerTemplateController;
