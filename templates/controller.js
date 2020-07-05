@@ -22,9 +22,9 @@ ControllerTemplateController.filterAttributes = (jsonObject) => {
         defineVariables += `let ${value} = req.body.${value}\n`;
 
         if (index == 0) {
-          parameters += `${value}\n`;
+          parameters += `${value}:${value}\n`;
         } else {
-          parameters += `,${value}`;
+          parameters += `,${value}:${value}`;
         }
 
         console.log("key, value :", key, value);
@@ -91,7 +91,7 @@ ControllerTemplateController.Template = (jsonObject) => {
   capitalizeName = capitalize(jsonObject.name);
   finalFile = `
     const _ = require('lodash');
-    const ObjectID = require('mongodb');
+    const {ObjectID} = require('mongodb');
     const ${capitalizeName} = require('../models/${jsonObject.name}');
 
 
