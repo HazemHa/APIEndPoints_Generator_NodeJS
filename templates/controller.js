@@ -88,16 +88,30 @@ ControllerTemplateController.filterAttributes = (jsonObject) => {
 
 ControllerTemplateController.Template = (jsonObject) => {
   parameters = ControllerTemplateController.filterAttributes(jsonObject);
-  capitalizeName = capitalize(jsonObject.name);
+  capitalizeName = capitalize(jsonObject.name)
+  nameOfValidation = capitalize(jsonObject.name)+ `Validation`
   finalFile = `
     const _ = require('lodash');
     const {ObjectID} = require('mongodb');
     const ${capitalizeName} = require('../models/${jsonObject.name}');
+    const ${nameOfValidation} = require("../validations/${jsonObject.name}")
+
 
 
     /* POST /${jsonObject.name} */
     exports.post${capitalizeName} = (req, res) => {
-        ${parameters}
+        ${parameters}\n
+
+        let output_validation   = ${nameOfValidation}.validate(data);
+
+if(output_validation.error){
+    return res.status(400).json({
+        "errors": {
+            "code": 400,
+            "error": output_validation.error
+        }
+    });
+}
         const ${jsonObject.name} = new ${capitalizeName}(data);
     
         ${jsonObject.name}.save().then((${jsonObject.name}) => {
@@ -180,10 +194,25 @@ ControllerTemplateController.Template = (jsonObject) => {
         });
     };
     
-    /* PATCH /${jsonObject.name}/:id */
+    /* PUT /${jsonObject.name}/:id */
     exports.update${capitalizeName}ById = (req, res) => {
         const id = req.params.id;
         ${parameters}  
+
+
+
+        let output_validation   = ${nameOfValidation}.validate(data);
+
+        if(output_validation.error){
+            return res.status(400).json({
+                "errors": {
+                    "code": 400,
+                    "error": output_validation.error
+                }
+            });
+        }
+
+
         if (!ObjectID.isValid(id)) {
             return res.status(404).json({
                 "errors": {

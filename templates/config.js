@@ -43,6 +43,7 @@ ConfigTemplateController.Template = () => {
     "description": "A package using end-points-api-generator",
     "author": "Hazem Hussein <hazemhahussain@gmail.com>",
     "dependencies": {
+      "@hapi/joi": "^17.1.1",
       "body-parser": "1.19.0",
       "express": "4.17.1",
       "lodash": "4.17.15",

@@ -9,25 +9,25 @@
                 "name":"key",
                 "type":"string",
                 "db_validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"message",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"signature",
                 "type":"string",
                 "validations":[{"required":true},{"default":""}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"last_update",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             }
         ]
         },
@@ -40,31 +40,31 @@
                 "name":"LocationID",
                 "type":"string",
                 "db_validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"OperatorID",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"StreetName",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"LOC_GPS_Latitude",
                 "type":"number",
                 "validations":[{"required":true},{"default":"1"}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"LOC_GPS_Longitude",
                 "type":"number",
                 "validations":[{"required":true},{"default":"1"}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             }
         ]
         },
@@ -77,49 +77,49 @@
                 "name":"fileName",
                 "type":"string",
                 "db_validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"Image",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"isProcessed",
                 "type":"string",
                 "validations":[{"required":true},{"default":false}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"isDeleted",
                 "type":"boolean",
                 "validations":[{"required":true},{"default":false}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"isUploaded",
                 "type":"boolean",
                 "validations":[{"required":true},{"default":false}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"isBack_up",
                 "type":"boolean",
                 "validations":[{"required":true},{"default":false}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"updatedAt",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"createdAt",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             }
         ]
         },
@@ -132,25 +132,25 @@
                 "name":"Active",
                 "type":"boolean",
                 "db_validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"work_from",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"work_to",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"last_update",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             }
         ]
         },
@@ -163,31 +163,31 @@
                 "name":"isActive",
                 "type":"boolean",
                 "db_validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"server_host",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"server_port",
                 "type":"number",
                 "validations":[{"required":true},{"default":""}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"server_username",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"server_password",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             }
         ]
         },
@@ -200,75 +200,75 @@
                 "name":"image_quality",
                 "type":"number",
                 "db_validations":[{"required":true},{"default":90}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"APP_DEBUG",
                 "type":"boolean",
                 "validations":[{"required":true},{"default":false}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"GPIO_delay",
                 "type":"number",
                 "validations":[{"required":true},{"default":800}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"delay_between_A_B",
                 "type":"number",
                 "validations":[{"required":true},{"default":800}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"isTriggerSystem",
                 "type":"boolean",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"isTrackingSystem",
                 "type":"boolean",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },{
                 "name":"isRedLigthSystem",
                 "type":"boolean",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"read_from_record_data",
                 "type":"boolean",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },{
                 "name":"LAN",
                 "type":"boolean",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },{
                 "name":"path_of_file",
                 "type":"string",
                 "validations":[{"required":true},{"default":"./UnitTest/RedLigth_02_20_2020.log"}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },{
                 "name":"SENSOR_UMRR0C",
                 "type":"boolean",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"SENSOR_UMRR0A",
                 "type":"boolean",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"Serial",
                 "type":"boolean",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"sensor_server",
@@ -277,13 +277,13 @@
                     "name":"ip",
                     "type":"string",
                     "db_validations":[{"required":true},{"default":"'192.168.11.1'"}],
-                    "joi_validations":["required()","string()"]
+                    "joi_validations":["string()","required()"]
                 },
                 {
                     "name":"port",
                     "type":"number",
                     "db_validations":[{"required":true},{"default":5555}],
-                    "joi_validations":["required()","number()"]
+                    "joi_validations":["number()","required()"]
                     }]},
                 "db_validations":[{"required":true}],
                 "joi_validations":[]
@@ -301,7 +301,7 @@
                     "name":"port",
                     "type":"number",
                     "db_validations":[{"required":true}],
-                    "joi_validations":["required()","number()"]
+                    "joi_validations":["number()","required()"]
                 }]},
                 "db_validations":[{"required":true}],
                 "joi_validations":[]
@@ -313,19 +313,19 @@
                     "name":"boolean",
                     "type":"string",
                     "db_validations":[{"required":true}],
-                    "joi_validations":["required()","boolean()"]
+                    "joi_validations":["boolean()","required()"]
                 },
                 {
                     "name":"deviceIP",
                     "type":"string",
                     "db_validations":[{"required":true}],
-                    "joi_validations":["required()","string()"]
+                    "joi_validations":["string()","required()"]
                 },
                 {
                     "name":"port",
                     "type":"number",
                     "db_validations":[{"required":true}],
-                    "joi_validations":["required()","number()"]
+                    "joi_validations":["number()","required()"]
                     }]},
                 "db_validations":[{"required":true}],
                 "joi_validations":[]
@@ -337,25 +337,25 @@
                     "name":"isActive",
                     "type":"boolean",
                     "db_validations":[{"required":true}],
-                    "joi_validations":["required()","boolean()"]
+                    "joi_validations":["boolean()","required()"]
                 },
                 {
                     "name":"ip",
                     "type":"string",
                     "db_validations":[{"required":true}],
-                    "joi_validations":["required()","string()"]
+                    "joi_validations":["string()","required()"]
                 },
                 {
                     "name":"from_port",
                     "type":"number",
                     "db_validations":[{"required":true}],
-                    "joi_validations":["required()","number()"]
+                    "joi_validations":["number()","required()"]
                 },
                 {
                     "name":"to_port",
                     "type":"number",
                     "db_validations":[{"required":true}],
-                    "joi_validations":["required()","number()"]
+                    "joi_validations":["number()","required()"]
                     }]},
                 "db_validations":[{"required":true}],
                 "joi_validations":[]
@@ -371,103 +371,103 @@
                 "name":"start_y",
                 "type":"number",
                 "db_validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"end_y",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"width",
                 "type":"number",
                 "validations":[{"required":true},{"default":""}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"trigger_line",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"trigger_width",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"direction",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"description",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"number",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"tolerances",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"limit_speed_car",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"limit_speed_truck",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"position_trigger_line_a",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"trigger_range_a",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"position_trigger_line_b",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"trigger_range_b",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"gpio_number",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"inverse_gpio",
                 "type":"boolean",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             }
         ]
         },
@@ -480,163 +480,163 @@
                 "name":"numberOfLane_LeftSide",
                 "type":"number",
                 "db_validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"numberOfLane_RigthSide",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"distance_sensor_to_first_lane_rigth",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"distance_sensor_to_first_lane_left",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"only_Departing",
                 "type":"boolean",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"only_Approaching",
                 "type":"boolean",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"read_from_record_data",
                 "type":"boolean",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"trigger_after_rigth",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"trigger_after_left",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"trigger_width_left",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"trigger_width_rigth",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"limit_speed_car_left",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"limit_speed_car_rigth",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"limit_speed_truck_rigth",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"limit_speed_truck_left",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"position_trigger_line_a_left",
                 "type":"number",
                 "validations":[{"required":true},{"default":-50}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"trigger_range_a_left",
                 "type":"number",
                 "validations":[{"required":true},{"default":0}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"position_trigger_line_b_left",
                 "type":"number",
                 "validations":[{"required":true},{"default":-50}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"trigger_range_b_left",
                 "type":"number",
                 "validations":[{"required":true},{"default":0}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"position_trigger_line_a_right",
                 "type":"number",
                 "validations":[{"required":true},{"default":-50}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"trigger_range_a_right",
                 "type":"number",
                 "validations":[{"required":true},{"default":0}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"position_trigger_line_b_right",
                 "type":"number",
                 "validations":[{"required":true},{"default":-50}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"trigger_range_b_right",
                 "type":"number",
                 "validations":[{"required":true},{"default":0}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"direction_rigth",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"direction_left",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"tolerances_left",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"tolerances_rigth",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             }
         ]
         },
@@ -649,19 +649,19 @@
                 "name":"SoftwareName",
                 "type":"string",
                 "db_validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"Lens",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"CameraUsed",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             }
         ]
         },
@@ -674,37 +674,37 @@
                 "name":"number",
                 "type":"string",
                 "db_validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"direction",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"camera",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"description",
                 "type":"string",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"limit_speed_car",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"limit_speed_truck",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             }
         ]
         },
@@ -717,7 +717,7 @@
                 "name":"number",
                 "type":"string",
                 "db_validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"cameras",
@@ -736,169 +736,169 @@
                 "name":"preparEsnapshot",
                 "type":"number",
                 "db_validations":[{"required":true},{"default":5}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"ExposureMode",
                 "type":"string",
                 "db_validations":[{"required":true}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"ExposureTimeRaw",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"ExposureTimeAbs",
                 "type":"number",
                 "validations":[{"required":true}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"GammaEnable",
                 "type":"boolean",
                 "validations":[{"required":true},{"default":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"GammaSelector",
                 "type":"string",
                 "validations":[{"required":true},{"default":"sRGB"}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"PixelFormat",
                 "type":"string",
                 "validations":[{"required":true},{"default":"BayerRG8"}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"LineSelector",
                 "type":"string",
                 "validations":[{"required":true},{"default":"Line2"}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"LineSource",
                 "type":"string",
                 "validations":[{"required":true},{"default":"ExposureActive"}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"GainRaw",
                 "type":"number",
                 "validations":[{"required":true},{"default":35}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"GainSelector",
                 "type":"string",
                 "validations":[{"required":true},{"default":"All"}],
-                "joi_validations":["required()","string()"]
+                "joi_validations":["string()","required()"]
             },
             {
                 "name":"PacketSize",
                 "type":"number",
                 "validations":[{"required":true},{"default":8000}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"Heartbeat",
                 "type":"number",
                 "validations":[{"required":true},{"default":15000}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"Inter_packet_Delay",
                 "type":"number",
                 "validations":[{"required":true},{"default":1000}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"FrameTransmissionDelay",
                 "type":"number",
                 "validations":[{"required":true},{"default":0}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"BandwidthReserve",
                 "type":"number",
                 "validations":[{"required":true},{"default":10}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"BandwidthReserveAccumulation",
                 "type":"number",
                 "validations":[{"required":true},{"default":10}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"AutoExposureContinuous",
                 "type":"boolean",
                 "validations":[{"required":true},{"default":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"AutoGainContinuous",
                 "type":"boolean",
                 "validations":[{"required":true},{"default":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"AutoWhiteBalance",
                 "type":"boolean",
                 "validations":[{"required":true},{"default":true}],
-                "joi_validations":["required()","boolean()"]
+                "joi_validations":["boolean()","required()"]
             },
             {
                 "name":"AutoExposureTimeAbsLowerLimit_Day",
                 "type":"number",
                 "validations":[{"required":true},{"default":100}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"AutoExposureTimeAbsUpperLimit_Day",
                 "type":"number",
                 "validations":[{"required":true},{"default":2000}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"AutoExposureTimeAbsLowerLimit_nigth",
                 "type":"number",
                 "validations":[{"required":true},{"default":100}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"AutoExposureTimeAbsUpperLimit_nigth",
                 "type":"number",
                 "validations":[{"required":true},{"default":500}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"AutoGainRawLowerLimit_Day",
                 "type":"number",
                 "validations":[{"required":true},{"default":35}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"AutoGainRawUpperLimit_Day",
                 "type":"number",
                 "validations":[{"required":true},{"default":36}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"AutoGainRawLowerLimit_nigth",
                 "type":"number",
                 "validations":[{"required":true},{"default":35}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             },
             {
                 "name":"AutoGainRawUpperLimit_nigth",
                 "type":"number",
                 "validations":[{"required":true},{"default":36}],
-                "joi_validations":["required()","number()"]
+                "joi_validations":["number()","required()"]
             }
         ]
         }
