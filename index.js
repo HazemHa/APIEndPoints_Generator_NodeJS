@@ -16,7 +16,6 @@ var openAPIPathsController = require("./templates/openapi/paths")
 var openAPITagsPlusGeneralInfoController = require("./templates/openapi/tagsAndGeneralInfo")
 var FullopenAPIController = require("./templates/openapi/FullopenAPI")
 
-var openAPIComponents_2Controller = require("./templates//openapi/components_2")
 var dirs = ['./src','./src/models','./src/validations','./src/routes/','./src/controllers/','./src/db','./src/openapi']
 dirs.forEach(dir => {
   if (!fs.existsSync(dir)){
