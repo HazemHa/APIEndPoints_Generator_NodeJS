@@ -14,6 +14,7 @@ var ConfigTemplateController = require("./templates/config.js")
 var openAPIComponentsController = require("./templates/openapi/components")
 var openAPIPathsController = require("./templates/openapi/paths")
 var openAPITagsPlusGeneralInfoController = require("./templates/openapi/tagsAndGeneralInfo")
+var FullopenAPIController = require("./templates/openapi/FullopenAPI")
 
 var openAPIComponents_2Controller = require("./templates//openapi/components_2")
 var dirs = ['./src','./src/models','./src/validations','./src/routes/','./src/controllers/','./src/db','./src/openapi']
@@ -62,18 +63,7 @@ routes.forEach((model, index, array) => {
   useModels +=`${models[index]}\n`
 });
 
-openAPIGeneralInfo += `\n"paths": {`
-pathsOpenAPI.forEach((path, index, array) => {
-
-  if (index === array.length - 1) {
-    openAPIGeneralInfo += `${path}`
-  } else {
-    openAPIGeneralInfo += `${path},`
-  }
-
-})
-
-openAPIGeneralInfo += `}`
+FullopenAPIController.Template(openAPIGeneralInfo,pathsOpenAPI,componentsOpenAPI)
 
 
 
@@ -82,51 +72,7 @@ openAPIGeneralInfo += `}`
 */
 
 
-openAPIGeneralInfo += `,\n"components": {
-  "schemas": {`
-componentsOpenAPI.forEach((component, index, array) => {
 
-  if (index === array.length - 1) {
-    openAPIGeneralInfo += `${component}`
-  } else {
-    openAPIGeneralInfo += `${component},`
-  }
-})
-
-openAPIGeneralInfo += `,"ValidationError": {
-  "type": "object",
-  "properties": {
-          "errors": {
-          "$ref": "#/components/schemas/ErrorMessage"
-            }
-  }
-},
-"NotFound": {
-  "type": "object",
-  "properties": {
-      "errors": {
-          "$ref": "#/components/schemas/ErrorMessage"
-            }
-  }
-},
-"ErrorMessage": {
-  "type": "object",
-  "properties": {
-      "code": {
-          "type": "number",
-           "example": 404
-            },
-      "message": {
-            "type": "string",
-            "example": "Lanesettings not found"
-              }
-  }
-}
-}
-}`
-openAPIGeneralInfo = `{${openAPIGeneralInfo}}`
-
-fs.writeFileSync(`./src/openapi/openapi.json`, openAPIGeneralInfo);
 
 
 
