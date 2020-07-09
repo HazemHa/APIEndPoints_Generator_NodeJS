@@ -1,0 +1,297 @@
+{
+  "paths": {
+    "/api/activationkeys/": {
+      "get": {
+        "tags": [
+          "activationkeys"
+        ],
+        "summary": "Get activationkeys By ID",
+        "description": "Return a Object of activation key\n",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "pass an id of object",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return an object of activationkey model",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/ActivationKey"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Sent parameter is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": " Data not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/NotFound"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/activationkeys/:id": {
+      "get": {
+        "tags": [
+          "activationkeys"
+        ],
+        "summary": "Get activationkeys By ID",
+        "description": "Return a Object of activation key\n",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "pass an id of object",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return an object of activationkey model",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/ActivationKey"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Sent parameter is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": " Data not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/NotFound"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "activationkeys"
+        ],
+        "summary": "Get activationkeys By ID",
+        "description": "Return a Object of activation key\n",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "pass an id of object",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return an object of activationkey model",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/ActivationKey"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Sent parameter is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": " Data not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/NotFound"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "activationkeys"
+        ],
+        "summary": "Get activationkeys By ID",
+        "description": "Return a Object of activation key\n",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "pass an id of object",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivationKey"
+              }
+            }
+          },
+          "description": "activationKey item to add"
+        },
+        "responses": {
+          "200": {
+            "description": "Return an object of activationkey model",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/ActivationKey"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Sent parameter is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": " Data not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/NotFound"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/activationkeys": {
+      "post": {
+        "tags": [
+          "activationkeys"
+        ],
+        "summary": "adds an activation item",
+        "description": "Adds an activation key to the system",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivationKey"
+              }
+            }
+          },
+          "description": "activationKey item to add"
+        },
+        "responses": {
+          "200": {
+            "description": "Return an object of activationkey model",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/ActivationKey"
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "item created"
+          },
+          "400": {
+            "description": "invalid input, object invalid"
+          },
+          "409": {
+            "description": "an existing item already exists"
+          }
+        }
+      }
+    }
+  }
+}
