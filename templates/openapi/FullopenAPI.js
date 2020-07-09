@@ -50,7 +50,7 @@ openAPIGeneralInfo += `,"ValidationError": {
   "properties": {
       "code": {
           "type": "number",
-           "example": 404
+           "example": 4xx
             },
       "message": {
             "type": "string",

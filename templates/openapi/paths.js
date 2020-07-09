@@ -19,30 +19,21 @@ openAPIPathsController.Template = (jsonObject) => {
           "tags": [
             "${jsonObject.name}"
           ],
-          "summary": "Get ${jsonObject.name} By ID",
-          "description": "Return a Object of ${jsonObject.name}"\n,
-          "parameters": [
-            {
-              "in": "path",
-              "name": "id",
-              "description": "pass an id of object",
-              "required": true,
-              "schema": {
-                "type": "string"
-              }
-            }
-          ],
+          "summary": "Get array of ${jsonObject.name}",
+          "description": "Return all Objects of ${jsonObject.name}"\n,
+          "parameters": [],
           "responses": {
             "200": {
-              "description": "Return an object of ${jsonObject.name} model",
+              "description": "Return an array of ${jsonObject.name} model",
               "content": {
                 "application/json": {
                   "schema": {
-                    "type": "object",
+                    "type": "array",
                     "items": {
-                      "$ref": "#/components/schemas/${schemaName}"
+                        "type": "object",
+                        "$ref": "#/components/schemas/${schemaName}"
                     }
-                  }
+                }
                 }
               }
             },
@@ -52,9 +43,7 @@ openAPIPathsController.Template = (jsonObject) => {
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "items": {
-                      "$ref": "#/components/schemas/ValidationError"
-                    }
+                    "$ref": "#/components/schemas/ValidationError"
                   }
                 }
               }
@@ -65,9 +54,7 @@ openAPIPathsController.Template = (jsonObject) => {
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "items": {
-                      "$ref": "#/components/schemas/NotFound"
-                    }
+                    "$ref": "#/components/schemas/NotFound"
                   }
                 }
               }
@@ -100,9 +87,7 @@ openAPIPathsController.Template = (jsonObject) => {
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "items": {
-                      "$ref": "#/components/schemas/${schemaName}"
-                    }
+                    "$ref": "#/components/schemas/${schemaName}"
                   }
                 }
               }
@@ -113,9 +98,7 @@ openAPIPathsController.Template = (jsonObject) => {
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "items": {
-                      "$ref": "#/components/schemas/ValidationError"
-                    }
+                    "$ref": "#/components/schemas/ValidationError"
                   }
                 }
               }
@@ -126,9 +109,7 @@ openAPIPathsController.Template = (jsonObject) => {
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "items": {
-                      "$ref": "#/components/schemas/NotFound"
-                    }
+                    "$ref": "#/components/schemas/NotFound"
                   }
                 }
               }
@@ -159,9 +140,7 @@ openAPIPathsController.Template = (jsonObject) => {
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "items": {
-                      "$ref": "#/components/schemas/${schemaName}"
-                    }
+                    "$ref": "#/components/schemas/${schemaName}"
                   }
                 }
               }
@@ -172,9 +151,7 @@ openAPIPathsController.Template = (jsonObject) => {
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "items": {
-                      "$ref": "#/components/schemas/ValidationError"
-                    }
+                    "$ref": "#/components/schemas/ValidationError"
                   }
                 }
               }
@@ -185,9 +162,7 @@ openAPIPathsController.Template = (jsonObject) => {
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "items": {
-                      "$ref": "#/components/schemas/NotFound"
-                    }
+                    "$ref": "#/components/schemas/NotFound"
                   }
                 }
               }
@@ -228,9 +203,7 @@ openAPIPathsController.Template = (jsonObject) => {
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "items": {
-                      "$ref": "#/components/schemas/${schemaName}"
-                    }
+                    "$ref": "#/components/schemas/${schemaName}"
                   }
                 }
               }
@@ -241,9 +214,7 @@ openAPIPathsController.Template = (jsonObject) => {
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "items": {
-                      "$ref": "#/components/schemas/ValidationError"
-                    }
+                    "$ref": "#/components/schemas/ValidationError"
                   }
                 }
               }
@@ -254,9 +225,7 @@ openAPIPathsController.Template = (jsonObject) => {
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "items": {
-                      "$ref": "#/components/schemas/NotFound"
-                    }
+                    "$ref": "#/components/schemas/NotFound"
                   }
                 }
               }
@@ -288,9 +257,7 @@ openAPIPathsController.Template = (jsonObject) => {
                 "application/json": {
                   "schema": {
                     "type": "object",
-                    "items": {
-                      "$ref": "#/components/schemas/${schemaName}"
-                    }
+                    "$ref": "#/components/schemas/${schemaName}"
                   }
                 }
               }
